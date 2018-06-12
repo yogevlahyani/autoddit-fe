@@ -1,0 +1,15 @@
+.autoddit-list-container {
+    margin: 0 auto;
+}
+
+button.add-autoddit-item {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 100%;
+    line-height: 40px;
+    width:  40px;
+    padding:  0;
+    border:  none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}

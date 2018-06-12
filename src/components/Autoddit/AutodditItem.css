@@ -1,0 +1,19 @@
+.panel-body {
+    padding: 20px;
+    height: 100%;
+}
+
+.row { margin: 0; height: 160px; }
+
+.vote,
+.details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex-1 { flex: 1; }
+
+.vote-count { font-size: 22px; }
+
+.arrow { cursor: pointer; }
