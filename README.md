@@ -4,12 +4,16 @@ A simple react app
 All of my comments in the code are for indication of the work flow and the code writing process.
 
 # Installation
+
+Run `npm install`
+
+*Optional - In case of using the mock API
+
 Run `mv .env.example .env` OR copy manually .env.example into .env file.
 
 If using the mock API, enable a chrome extension called CORS
 
-Run `npm install`
-
+# Running the app
 Run `npm start`
 
 # Dependencies I used for this project
