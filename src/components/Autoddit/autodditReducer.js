@@ -82,6 +82,28 @@ export default (state = defaultState, action) => {
             copy = Reset(state);
             return copy;
 
+        // Add comment
+        case actions.COMMENT.ADD.BEGIN:
+        case actions.COMMENT.ADD.SUCCESS:
+            const { index, user_ref, text, created_at, votes } = action.data;
+            copy[index].comments.push({
+                user_ref,
+                text,
+                created_at,
+                votes,
+                comments_count: 0,
+                comments: []
+            });
+
+            copy[index].comments_count = copy[index].comments.length;
+
+            return copy;
+
+        case actions.COMMENT.ADD.ERROR:
+            copy = Reset(state);
+            return copy;
+
+
         default:
             return state;
     }

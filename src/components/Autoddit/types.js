@@ -1,5 +1,7 @@
+import { actions as commentActions } from './Comments/types';
 
 export const actions = {
+    ...commentActions,
     AUTODDIT: {
         FETCH: {
             BEGIN: 'AUTODDIT_FETCH_BEGIN',

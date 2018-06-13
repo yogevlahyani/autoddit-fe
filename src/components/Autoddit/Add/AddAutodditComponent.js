@@ -12,8 +12,6 @@ class AddAutodditComponent extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.handleChange = this.handleChange.bind(this);
-
         this.state = {
             title: '',
             image: '',
@@ -34,11 +32,11 @@ class AddAutodditComponent extends Component {
         return !_.isEmpty(title) && !_.isEmpty(image) && validUrl.isUri(image);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
-    }
+    };
 
-    addAutoddit() {
+    addAutoddit = () => {
         if (this.validateForm()) {
             const { title, image } = this.state;
             const created_at = moment().format('MMM DD, YYYY HH:mm');
@@ -52,12 +50,13 @@ class AddAutodditComponent extends Component {
                 created_at,
                 user_ref,
                 comments_count,
-                votes
+                votes,
+                comments: []
             });
 
             this.props.history.push('/');
         }
-    }
+    };
 
     render() {
         const { errors } = this.state;
@@ -70,7 +69,7 @@ class AddAutodditComponent extends Component {
                             Title
                         </Col>
                         <Col sm={10}>
-                            <FormControl type="text" name="title" placeholder="Title" onChange={this.handleChange.bind(this)} />
+                            <FormControl type="text" name="title" placeholder="Title" onChange={this.handleChange} />
 
                             {
                                 _.includes(errors, 'emptyTitle') &&
@@ -92,7 +91,7 @@ class AddAutodditComponent extends Component {
                                 type="text"
                                 name="image"
                                 placeholder="http://example.com/autoddit.png"
-                                onChange={this.handleChange.bind(this)} />
+                                onChange={this.handleChange} />
 
                             {
                                 (_.includes(errors, 'emptyImage') || _.includes(errors, 'invalidImageURL')) &&
@@ -107,7 +106,7 @@ class AddAutodditComponent extends Component {
 
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                            <Button onClick={this.addAutoddit.bind(this)}>Add</Button>
+                            <Button onClick={this.addAutoddit}>Add</Button>
                         </Col>
                     </FormGroup>
                 </Form>

@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { actions } from './types';
 
 export const login = (name) => {

@@ -25,6 +25,6 @@ Run `npm start`
 * valid-url: https://github.com/ogt/valid-url
 
 # Todo
-- Add comments section - Create, Read.
+- Recursive comments adding
 
 - Add an inner page to view every Autoddit post individually (Details page)
