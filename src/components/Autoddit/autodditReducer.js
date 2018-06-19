@@ -1,8 +1,7 @@
 import _ from 'lodash';
 import { actions } from './types';
 
-const autoddits = localStorage.getItem('autoddits');
-const defaultState = JSON.parse(autoddits) || [];
+const defaultState = [];
 
 const Copy = (state) => {
     return _.clone(state);
@@ -16,6 +15,26 @@ const Reset = (state) => {
     return copy;
 };
 
+const updateCommentCount = (copy) => {
+    const comments = copy.filter(a => a.ref);
+    // const autoddits = copy.filter(a => !a.ref);
+
+    // autoddits.forEach(a => {
+    //     const childrenComments = comments.filter(c => c.ref === a.id);
+    //     console.log('childrenComments', childrenComments);
+    //
+    //     childrenComments.forEach(cc => {
+    //         const innerComments = comments.filter(c => c.ref === cc.id && c.ref !== a.id);
+    //         console.log('innerComments', innerComments);
+    //     });
+    //
+    // });
+
+    copy.forEach(a => {
+       a.comments_count = comments.filter(c => c.ref === a.id).length;
+    });
+};
+
 export default (state = defaultState, action) => {
     let copy = Copy(state);
 
@@ -24,7 +43,10 @@ export default (state = defaultState, action) => {
         // Fetch
         case actions.AUTODDIT.FETCH.BEGIN:
         case actions.AUTODDIT.FETCH.SUCCESS:
-            copy = [ ...copy, ...action.data ];
+            copy = _.concat(copy, action.data) ;
+            copy = _.uniqBy(copy, 'id') ;
+
+            updateCommentCount(copy);
 
             return copy;
 
@@ -36,10 +58,6 @@ export default (state = defaultState, action) => {
         case actions.AUTODDIT.ADD.BEGIN:
         case actions.AUTODDIT.ADD.SUCCESS:
             copy.push(action.data);
-            const localAutoddits = JSON.parse(localStorage.getItem('autoddits')) || [];
-            localAutoddits.push(action.data);
-            // Save added autoddits to localStorage
-            localStorage.setItem('autoddits', JSON.stringify(autoddits));
 
             return copy;
 
@@ -85,17 +103,18 @@ export default (state = defaultState, action) => {
         // Add comment
         case actions.COMMENT.ADD.BEGIN:
         case actions.COMMENT.ADD.SUCCESS:
-            const { index, user_ref, text, created_at, votes } = action.data;
-            copy[index].comments.push({
+            const { user_ref, text, created_at, votes, id, ref } = action.data;
+            copy.push({
+                id,
                 user_ref,
+                ref,
                 text,
                 created_at,
                 votes,
-                comments_count: 0,
-                comments: []
+                comments_count: 0
             });
 
-            copy[index].comments_count = copy[index].comments.length;
+            updateCommentCount(copy);
 
             return copy;
 

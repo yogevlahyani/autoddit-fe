@@ -10,13 +10,14 @@ import CommentItem from "./CommentItem";
 class CommentList extends Component {
 
     renderCommentList() {
-        const { autoddits, autodditIndex } = this.props;
-        const { comments } = autoddits[autodditIndex];
+        const { autoddits, item } = this.props;
+        console.log(item);
+        const comments = autoddits.filter(a => a.ref && a.ref === item.id);
+
         return comments.map((adItem, i) => <CommentItem key={i} index={i} comment={adItem} />);
     }
 
     render() {
-
         return (
             <div className="autoddit-list-container container">
                 <h3>Comments:</h3>

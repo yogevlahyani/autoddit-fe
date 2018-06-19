@@ -1,90 +1,38 @@
 [
   {
-    "title": "Full moon rising over Mount Hood",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Hood85_mount_hood_and_lost_lake_ca1985.jpg",
-    "created_at": "Jan 22, 2017 08:43",
-    "user_ref": "superman221",
-    "comments_count": 4,
-    "votes": 22000,
-    "comments": [
-      {
-        "user_ref": "batman995",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "comments_count": 2,
-        "votes": 22000,
-        "created_at": "Jan 22, 2017 08:43",
-        "comments": [
-          {
-            "user_ref": "yogev1",
-            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            "comments_count": 0,
-            "votes": 22000,
-            "created_at": "Jan 22, 2017 08:43",
-            "comments": [
-              {
-                "user_ref": "yogev1",
-                "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                "comments_count": 0,
-                "votes": 22000,
-                "created_at": "Jan 22, 2017 08:43",
-                "comments": []
-              }
-            ]
-          },
-          {
-            "user_ref": "shay",
-            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            "comments_count": 0,
-            "votes": 22000,
-            "created_at": "Jan 22, 2017 08:43",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "user_ref": "shay",
-        "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        "comments_count": 0,
-        "votes": 22000,
-        "created_at": "Jan 22, 2017 08:43",
-        "comments": []
-      }
-    ]
+    "id": "43270e30-740d-11e8-ab97-b32f55481a20",
+    "title": "Awesome AUTOddit",
+    "image": "https://i.kinja-img.com/gawker-media/image/upload/s--d5x3CWAf--/c_scale,f_auto,fl_progressive,q_80,w_800/xgdilxxhd0l3knrvnaau.jpg",
+    "created_at": "Jun 20, 2018 01:08",
+    "user_ref": "Yogev",
+    "comments_count": 0,
+    "votes": 1
   },
   {
-    "title": "Full moon rising over Mount Hood",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Hood85_mount_hood_and_lost_lake_ca1985.jpg",
-    "created_at": "Jan 22, 2017 08:43",
-    "user_ref": "yogev",
-    "comments_count": 0,
+    "id": "7cab4371-c0a9-4129-884c-fd461369067c",
+    "user_ref": "Shay",
+    "ref": "43270e30-740d-11e8-ab97-b32f55481a20",
+    "text": "Really ?",
+    "created_at": "Jun 20, 2018 01:09",
+    "votes": -1,
+    "comments_count": 0
+  },
+  {
+    "id": "2fe3b8ac-9051-4ce7-8150-82f2ae9cda0f",
+    "user_ref": "batman995",
+    "ref": "7cab4371-c0a9-4129-884c-fd461369067c",
+    "text": "Hope so",
+    "created_at": "Jun 20, 2018 01:09",
     "votes": 0,
-    "comments": []
+    "comments_count": 0
   },
   {
-    "title": "Full moon rising over Mount Hood",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Hood85_mount_hood_and_lost_lake_ca1985.jpg",
-    "created_at": "Jan 22, 2017 08:43",
-    "user_ref": "yogev",
     "comments_count": 0,
-    "votes": 999,
-    "comments": []
-  },
-  {
-    "title": "Full moon rising over Mount Hood",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Hood85_mount_hood_and_lost_lake_ca1985.jpg",
-    "created_at": "Jan 22, 2017 08:43",
-    "user_ref": "yogev",
-    "comments_count": 0,
-    "votes": 22000,
-    "comments": []
-  },
-  {
-    "title": "Full moon rising over Mount Hood",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Hood85_mount_hood_and_lost_lake_ca1985.jpg",
-    "created_at": "Jan 22, 2017 08:43",
-    "user_ref": "yogev",
-    "comments_count": 0,
-    "votes": 22000,
-    "comments": []
+    "created_at": "Jun 20, 2018 02:27",
+    "id": "51e5c550-7418-11e8-8c11-6daa659232a8",
+    "image": "https://i.pinimg.com/originals/0e/6d/1d/0e6d1d244bf344b638b90c2d675cdc8e.png",
+    "title": "Awesome AUTOddit",
+    "user_ref": "Yogev",
+    "votes": 0
   }
 ]

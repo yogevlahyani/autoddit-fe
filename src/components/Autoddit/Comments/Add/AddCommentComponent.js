@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {Button, ControlLabel, Form, FormControl, FormGroup, Modal} from "react-bootstrap";
 import moment from "moment";
 import _ from 'lodash';
+import uuidv4 from 'uuid/v4';
 
 import { add } from "../actions";
 
@@ -30,17 +31,22 @@ class AddCommentComponent extends Component {
     }
 
     addComment = () => {
+        const id = uuidv4();
         const { comment } = this.state;
-        const { index, user } = this.props;
+        const { index, user, item } = this.props;
         const created_at = moment().format('MMM DD, YYYY HH:mm');
 
         if (this.validateComment()) {
+
             this.props.actions.add({
+                id,
+                ref: item.id,
                 index,
                 user_ref: user.name,
                 text: comment,
                 created_at,
-                votes: 100000
+                votes: 0,
+                comments_count: 0
             });
             this.props.closeModal();
         }

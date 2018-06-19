@@ -23,6 +23,7 @@ Run `npm start`
 * react-bootstrap: https://github.com/react-bootstrap/react-bootstrap
 * react-router-dom: https://github.com/ReactTraining/react-router
 * valid-url: https://github.com/ogt/valid-url
+* uuid: https://github.com/kelektiv/node-uuid
 
 # Todo
 - Recursive comments adding

@@ -36,8 +36,9 @@ class AutodditItem extends Component {
     };
 
     toggleComments = () => {
-        const { comments } = this.props.item;
+        const { id } = this.props.item;
         const { showComments } = this.state;
+        const comments = this.props.autoddits.filter(a => a.ref && a.ref === id);
 
         if (comments.length > 0) {
           this.setState({ showComments: !showComments });
@@ -58,7 +59,7 @@ class AutodditItem extends Component {
 
     render() {
         const { showComments, showAddCommentModal } = this.state;
-        const { item, index } = this.props;
+        const { item } = this.props;
         const { title, image, created_at, comments_count, votes, user_ref } = item;
         const renderedVotes = votes >= 1000 ? parseFloat(votes / 1000).toFixed(2) + 'K' : votes;
         // const timeAgo = moment(created_at).fromNow();
@@ -97,9 +98,9 @@ class AutodditItem extends Component {
                         </Col>
                     </Row>
                 </Panel.Body>
-                <AddCommentComponent showAddCommentModal={showAddCommentModal} closeModal={this.showAddCommentModal} { ...this.props } />
+                <AddCommentComponent showAddCommentModal={showAddCommentModal} closeModal={this.showAddCommentModal} item={item} {...this.props} />
                 {
-                    showComments && <CommentList autodditIndex={index} />
+                    showComments && <CommentList item={item} />
                 }
             </Panel>
         );
@@ -107,11 +108,14 @@ class AutodditItem extends Component {
 };
 
 AutodditItem.propTypes = {
-    actions: PropTypes.object
+    actions: PropTypes.object,
+    autoddits: PropTypes.arrayOf(PropTypes.object)
 };
 
 const mapStateToProps = (store) => {
-    return { };
+    return {
+        autoddits: store.autoddits
+    };
 };
 
 const mapDispatchToProps = dispatch => {

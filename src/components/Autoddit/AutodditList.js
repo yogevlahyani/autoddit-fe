@@ -17,7 +17,9 @@ class AutodditList extends Component {
     }
 
     renderAutodditsList() {
-        return this.props.autoddits.map((adItem, i) => <AutodditItem { ...this.props } key={i} index={i} item={adItem} />);
+        let { autoddits } = this.props;
+        autoddits = autoddits.filter(a => !a.ref);
+        return autoddits.map((adItem, i) => <AutodditItem { ...this.props } key={i} index={i} item={adItem} />);
     }
 
     goToAddAutoddit() {

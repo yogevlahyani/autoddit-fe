@@ -5,6 +5,7 @@ import {ControlLabel, FormControl, Button, FormGroup, Col, Form, Alert} from 're
 import _ from 'lodash';
 import moment from 'moment';
 import validUrl from 'valid-url';
+import uuidv1 from 'uuid/v1';
 
 import { add } from "../actions";
 
@@ -38,20 +39,21 @@ class AddAutodditComponent extends Component {
 
     addAutoddit = () => {
         if (this.validateForm()) {
+            const id = uuidv1();
             const { title, image } = this.state;
             const created_at = moment().format('MMM DD, YYYY HH:mm');
             const user_ref = this.props.user.name;
             const comments_count = 0;
-            const votes = 999;
+            const votes = 0;
 
             this.props.actions.add({
+                id,
                 title,
                 image,
                 created_at,
                 user_ref,
                 comments_count,
-                votes,
-                comments: []
+                votes
             });
 
             this.props.history.push('/');
