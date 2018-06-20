@@ -26,6 +26,7 @@ Run `npm start`
 * uuid: https://github.com/kelektiv/node-uuid
 
 # Todo
-- Recursive comments adding
 
 - Add an inner page to view every Autoddit post individually (Details page)
+
+- Fix comment_count to count all autoddit post comments
