@@ -11,7 +11,7 @@ import configureStore from "./stores";
 
 // Components
 import App from "./App";
-import NoMatch from './NoMatch';
+import NoMatch from './components/NoMatch';
 import { LoginComponent } from "./components/Login";
 import { HeaderComponent } from "./components/Header";
 import { AddAutodditComponent } from "./components/Autoddit";

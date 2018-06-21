@@ -40,7 +40,7 @@ class AddCommentComponent extends Component {
 
             this.props.actions.add({
                 id,
-                ref: item.id,
+                parentId: item.id,
                 index,
                 user_ref: user.name,
                 text: comment,

@@ -11,7 +11,7 @@
   {
     "id": "7cab4371-c0a9-4129-884c-fd461369067c",
     "user_ref": "Shay",
-    "ref": "43270e30-740d-11e8-ab97-b32f55481a20",
+    "parentId": "43270e30-740d-11e8-ab97-b32f55481a20",
     "text": "Really ?",
     "created_at": "Jun 20, 2018 01:09",
     "votes": -1,
@@ -20,7 +20,7 @@
   {
     "id": "2fe3b8ac-9051-4ce7-8150-82f2ae9cda0f",
     "user_ref": "batman995",
-    "ref": "7cab4371-c0a9-4129-884c-fd461369067c",
+    "parentId": "7cab4371-c0a9-4129-884c-fd461369067c",
     "text": "Hope so",
     "created_at": "Jun 20, 2018 01:09",
     "votes": 0,

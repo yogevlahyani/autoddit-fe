@@ -38,7 +38,7 @@ class AutodditItem extends Component {
     toggleComments = () => {
         const { id } = this.props.item;
         const { showComments } = this.state;
-        const comments = this.props.autoddits.filter(a => a.ref && a.ref === id);
+        const comments = this.props.autoddits.filter(a => a.parentId && a.parentId === id);
 
         if (comments.length > 0) {
           this.setState({ showComments: !showComments });

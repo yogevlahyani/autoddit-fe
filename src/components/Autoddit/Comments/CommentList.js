@@ -12,7 +12,7 @@ class CommentList extends Component {
     renderCommentList() {
         const { autoddits, item } = this.props;
         console.log(item);
-        const comments = autoddits.filter(a => a.ref && a.ref === item.id);
+        const comments = autoddits.filter(a => a.parentId && a.parentId === item.id);
 
         return comments.map((adItem, i) => <CommentItem key={i} index={i} comment={adItem} />);
     }

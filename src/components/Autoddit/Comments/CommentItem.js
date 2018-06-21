@@ -55,7 +55,7 @@ class CommentItem extends Component {
                         const { text, user_ref, created_at, votes, comments_count } = rComment;
                         const renderedVotes = votes >= 1000 ? parseFloat(votes / 1000).toFixed(2) + 'K' : votes;
                         const timeAgo = moment(created_at, 'MMM DD, YYYY HH:mm').fromNow();
-                        const childComments = autoddits.filter(a => a.ref && a.ref === rComment.id);
+                        const childComments = autoddits.filter(a => a.parentId && a.parentId === rComment.id);
 
                         return (
                             <li key={i} className="list-item comment-container">
@@ -105,7 +105,7 @@ class CommentItem extends Component {
         const {text, user_ref, created_at, votes, comments_count} = comment;
         const renderedVotes = votes >= 1000 ? parseFloat(votes / 1000).toFixed(2) + 'K' : votes;
         const timeAgo = moment(created_at, 'MMM DD, YYYY HH:mm').fromNow();
-        const childComments = autoddits.filter(a => a.ref && a.ref === comment.id);
+        const childComments = autoddits.filter(a => a.parentId && a.parentId === comment.id);
 
         console.log(comment);
 

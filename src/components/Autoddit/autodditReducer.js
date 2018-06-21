@@ -16,22 +16,22 @@ const Reset = (state) => {
 };
 
 const updateCommentCount = (copy) => {
-    const comments = copy.filter(a => a.ref);
-    // const autoddits = copy.filter(a => !a.ref);
+    const comments = copy.filter(a => a.parentId);
+    // const autoddits = copy.filter(a => !a.parentId);
 
     // autoddits.forEach(a => {
-    //     const childrenComments = comments.filter(c => c.ref === a.id);
+    //     const childrenComments = comments.filter(c => c.parentId === a.id);
     //     console.log('childrenComments', childrenComments);
     //
     //     childrenComments.forEach(cc => {
-    //         const innerComments = comments.filter(c => c.ref === cc.id && c.ref !== a.id);
+    //         const innerComments = comments.filter(c => c.parentId === cc.id && c.parentId !== a.id);
     //         console.log('innerComments', innerComments);
     //     });
     //
     // });
 
     copy.forEach(a => {
-       a.comments_count = comments.filter(c => c.ref === a.id).length;
+       a.comments_count = comments.filter(c => c.parentId === a.id).length;
     });
 };
 
@@ -103,11 +103,11 @@ export default (state = defaultState, action) => {
         // Add comment
         case actions.COMMENT.ADD.BEGIN:
         case actions.COMMENT.ADD.SUCCESS:
-            const { user_ref, text, created_at, votes, id, ref } = action.data;
+            const { user_ref, text, created_at, votes, id, parentId } = action.data;
             copy.push({
                 id,
                 user_ref,
-                ref,
+                parentId,
                 text,
                 created_at,
                 votes,
